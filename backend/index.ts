@@ -1,4 +1,3 @@
-// TODO: Rewrite in TypeScript
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -17,7 +16,6 @@ const app = express();
 app.listen(BACKEND_PORT, () =>
   console.log(`Backend listening on http://localhost:${BACKEND_PORT}`)
 );
-
 
 // an /api test route
 app.get('/api/test', (req, res) => {

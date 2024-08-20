@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "concurrently \"npm:backend\" \"npm:dev\"",
-    "backend": "npm run killBackend && nodemon --watch backend backend/index.js",
+    "backend": "concurrently \"npm:tsc-watch\" \"npm:nodemon-dist-watch\"",
+    "nodemon-dist-watch": "npm run killBackend && nodemon --watch backendDist backendDist/index.js",
+    "tsc-watch": "cd backend && tsc --watch",
     "dev": "npm run killVite && vite",
     "build": "vite build",
     "lint": "eslint .",

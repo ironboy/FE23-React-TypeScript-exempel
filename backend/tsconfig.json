@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "nodenext",
+    "target": "es6",
+    "module": "nodenext",
+    "lib": [
+      "esnext"
+    ],
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declarationDir": "../backendDist",
+    "outDir": "../backendDist",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
