@@ -1,9 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import viteRestart from 'vite-plugin-restart';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    viteRestart({
+      restart: [
+        'backendDist/index.js',
+      ]
+    })
+  ],
   // let traffic to Vite starting with /api through to our backend
   server: {
     proxy: {
