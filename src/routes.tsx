@@ -1,4 +1,4 @@
-import { Route } from './interfaces';
+import { Route } from './interfacesAndTypes';
 import StartPage from './pages/StartPage';
 import AboutPage from './pages/AboutPage';
 import ProductPage from './pages/ProductPage';
