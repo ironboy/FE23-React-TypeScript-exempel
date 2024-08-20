@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "npm run killPorts && concurrently \"npm:backend\" \"npm:dev\"",
-    "backend": "nodemon --watch backend backend/index.js",
-    "killPorts": "node kill-ports-on-restart.js",
-    "dev": "vite",
+    "start": "concurrently \"npm:backend\" \"npm:dev\"",
+    "backend": "npm run killBackend && nodemon --watch backend backend/index.js",
+    "dev": "npm run killVite && vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "killVite": "node _kill/killVitePort.js",
+    "killBackend": "node _kill/killBackendport.js"
   },
   "dependencies": {
     "express": "^4.19.2",
