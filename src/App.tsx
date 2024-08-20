@@ -23,10 +23,11 @@ export default function App() {
   });
 
   // fetch some data from the backend
-  // and don't render anything until it has been fetched
-  // (to prevent 'flickering' re-renders on pages using it)
   useFetch('onMount', '/api/test').then((response: any) =>
     global.messageFromBackend = response);
+
+  // and don't render anything until it has been fetched
+  // (to prevent 'flickering' re-renders on pages using it)
   if (!global.messageFromBackend) { return null; }
 
   return <>
