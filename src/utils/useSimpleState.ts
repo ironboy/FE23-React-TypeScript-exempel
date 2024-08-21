@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useDebugValue } from 'react';
 
 function proxify(obj: any, setter: Function) {
   // avoid proxying a proxy object
@@ -32,5 +32,11 @@ function onChange(this: any, propToListenFor: string, func: Function) {
 }
 
 export default function useSimpleState(object: any) {
-  return proxify(...useState(object));
+  const [value, setter] = useState(object);
+  const debugValue = Object.fromEntries(
+    Object.entries(value).filter(([key, val]) =>
+      key.indexOf('__') !== 0 && typeof val !== 'function')
+  );
+  useDebugValue(debugValue);
+  return proxify(value, setter);
 }
