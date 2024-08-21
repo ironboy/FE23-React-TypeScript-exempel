@@ -18,7 +18,7 @@ app.listen(BACKEND_PORT, () =>
 );
 
 // an /api test route
-app.get('/api/test', (req, res) => {
+app.get('/api/test', (_req, res) => {
   res.json({ success: 'We can reach the api' });
 });
 
@@ -27,6 +27,6 @@ app.use(express.static(distFolder));
 
 // for frontend routing in a SPA/React to work serve the index.html
 // file if nothing else is found (must be the LAST route defined)
-app.get('*', (req, res) => {
+app.get('*', (_req, res) => {
   res.sendFile(path.join(distFolder, 'index.html'));
 });
