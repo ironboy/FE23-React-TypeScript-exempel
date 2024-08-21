@@ -4,16 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "concurrently \"npm:backend\" \"npm:dev\"",
-    "backend": "concurrently \"npm:tsc-watch\" \"npm:nodemon-dist-watch\"",
-    "nodemon-dist-watch": "npm run killBackend && nodemon --watch backendDist backendDist/index.js",
+    "start": "node _runner.js",
+    "backend": "node backend/index.js",
     "tsc-watch": "cd backend && tsc --watch",
-    "dev": "npm run killVite && vite",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "killVite": "node _kill/killVitePort.js",
-    "killBackend": "node _kill/killBackendport.js"
+    "preview": "vite preview"
   },
   "dependencies": {
     "express": "^4.19.2",
@@ -37,7 +34,6 @@
     "nodemon": "^3.1.4",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1",
-    "vite-plugin-restart": "^0.4.1"
+    "vite": "^5.4.1"
   }
 }
