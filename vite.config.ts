@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     viteRestart({
       restart: [
-        'backendDist/index.js',
+        'backendDist/*',
       ]
     })
   ],
