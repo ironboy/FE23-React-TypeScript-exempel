@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node _runner.js",
-    "backend": "node backend/index.js",
+    "backend": "node backendDist/index.js",
     "tsc-watch": "cd backend && tsc --watch",
     "dev": "vite",
     "build": "vite build",
@@ -32,8 +32,10 @@
     "globals": "^15.9.0",
     "kill-port-process": "^3.2.1",
     "nodemon": "^3.1.4",
+    "pid-port": "^1.0.0",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vite-plugin-restart": "^0.4.1"
   }
 }
